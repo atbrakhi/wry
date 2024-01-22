@@ -16,55 +16,12 @@ Servo fits into this position pretty well because it isn't controlled by any hug
 While it doesn't provide full coverage of all web features yet, it already offers super flexible interface to work with.
 In this branch, we showcase how to integrate and customize it to become a modern style landing page.
 
-![](demo.png)
-[Video link](https://twitter.com/Yu_Wei_Wu/status/1740251457285431487) to see the demo showcase
+# Usage
 
-## Usage
+- Clone this repository
+- build the project `cargo build`
+- run the demo `cargo run --example servo`
 
-The current demo only works on macOS at the moment since it tries to customize its traffic light buttons to be seamless in the window. 
+# Note
 
-### Build Servo
-
-- Clone Servo repository (rev@ 7305c59): We are still working on making it to be a cargo git dependency. But it's more stable to make a local build for now.
-
-  ```sh
-  git clone https://github.com/servo/servo.git
-  cd servo
-  git checkout 7305c59
-  ```
-
-  - Please follow the instructions in [Servo - Build Setup (macOS)](https://github.com/servo/servo#macos) to build a successful copy first.
-
-- Build wry
-
-  - Clone wry repository
-
-  ```sh
-  git clone https://github.com/tauri-apps/wry.git
-  cd wry
-  ```
-
-  - Copy required files from Servo repository
-
-  ```sh
-  cp -a ../servo/resources .
-  cp -f ../servo/Cargo.lock .
-  ```
-
-  - Build wry
-
-  ```sh
-  cargo build
-  ```
-
-  - Run servo example
-
-  ```sh
-  cargo run --example servo
-  ```
-
-## Future Work
-
-- Add more window and servo features to make it feel more like a general webivew library.
-- Improve Servo's development experience.
-- Multi webviews and multi browsing contexts in the same window.
+`demo-servo` is my local branch where I experiment with embedding Wry and Servo. I have also customized it accordingly. You should check out [`servo-wry-demo`](https://github.com/tauri-apps/wry/tree/servo-wry-demo) for the original demo from the Wry team.
