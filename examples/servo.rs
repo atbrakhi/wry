@@ -27,7 +27,7 @@ use winit::platform::macos::WindowBuilderExtMacOS;
 fn main() -> wry::Result<()> {
   let event_loop = EventLoop::new().unwrap();
   let window = WindowBuilder::new()
-    .with_inner_size(PhysicalSize::new(1000, 500))
+    .with_inner_size(PhysicalSize::new(960, 540))
     .build(&event_loop)
     .unwrap();
 

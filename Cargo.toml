@@ -40,6 +40,7 @@ servo = []
 cfg_aliases = "0.1"
 
 [dependencies]
+libservo = { git = "https://github.com/servo/servo", rev="7305c59", features = ["max_log_level", "native-bluetooth", "webdriver"] }
 libc = "0.2"
 log = "0.4"
 once_cell = "1"
@@ -50,7 +51,6 @@ url = "2.4"
 http = "0.2"
 raw-window-handle = { version = "0.5", features = ["std"] }
 # Servo TODO move to feature gate
-libservo = { path = "../servo/components/servo", features = ["max_log_level", "native-bluetooth", "webdriver"] }
 servo-media = { git = "https://github.com/servo/media" }
 crossbeam-channel = "0.5"
 getopts = "0.2.17"

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html {
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(#f1c3c3, #9198e5);
+        }
+        body {
+          margin-top: 40px;
+          text-align: center;
+        }
+        #timer {
+            font-size: 72px;
+            margin-bottom: 20px;
+        }
+        a {
+            font-size: 40px;
+            margin: 10px;
+            padding: 10px;
+            outline: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        a:hover {
+          background: #818ae3;
+        }
+    </style>
+
+</head>
+<body>
+<div id="timer">00:00:00</div>
+<a onclick="startTimer()">Start</a>
+<a onclick="stopTimer()">Stop</a>
+<!-- <button onclick="restartTimer()">Restart</button> -->
+
+<script>
+    var timerInterval;
+    var elapsedSeconds = 0;
+
+    let startTimer = () => {
+        if (timerInterval) return;
+        elapsedSeconds = 0;
+        timerInterval = setInterval(function() {
+            elapsedSeconds++;
+            document.getElementById('timer').innerText = formatTime(elapsedSeconds);
+        }, 1000);
+    }
+
+    let stopTimer = () => {
+        clearInterval(timerInterval);
+        timerInterval = null;
+    }
+
+    let restartTimer = () => {
+      stopTimer()
+      elapsedSeconds = 0;
+      startTimer();
+    }
+
+    let formatTime = (totalSeconds) => {
+        var hours = Math.floor(totalSeconds / 3600);
+        var minutes = Math.floor((totalSeconds - (hours * 3600)) / 60);
+        var seconds = totalSeconds - (hours * 3600) - (minutes * 60);
+
+        hours = hours < 10 ? "0" + hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        return hours + ":" + minutes + ":" + seconds;
+    }
+</script>
+</body>
+</html>

@@ -47,7 +47,7 @@ impl Embedder {
       CompositeTarget::Window,
     );
 
-    let demo_path = std::env::current_dir().unwrap().join("examples/demo.html");
+    let demo_path = std::env::current_dir().unwrap().join("examples/timer.html");
     let url = ServoUrl::from_file_path(demo_path.to_str().unwrap()).unwrap();
     init_servo
       .servo
