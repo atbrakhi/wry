@@ -16,6 +16,7 @@ Servo fits into this position pretty well because it isn't controlled by any hug
 While it doesn't provide full coverage of all web features yet, it already offers super flexible interface to work with.
 In this branch, we showcase how to integrate and customize it to become a modern style landing page.
 
+![Demo.png](timer-demo.png)
 # Usage
 
 - Clone this repository
